@@ -1,7 +1,5 @@
 import Houses from "./components/Houses";
 import React, {useState, useEffect} from "react";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Edit from "./pages/Edit";
 
 function App() {
   const [houses, setHouses] = useState([]);
@@ -16,20 +14,24 @@ function App() {
   const updatedHouses = houses.filter((house) => house.id !== id);
   setHouses(updatedHouses)
 }
+
+const handleUpdateHouse = (updatedHouse) => {
+  const updatedHouses = houses.filter((house) => {
+    if (house.id === updatedHouse.id) {
+      return updatedHouse
+    } else {
+      return house
+    }
+  })
+  setHouses(updatedHouses)
+}
   return (
-    <Router>
-      <Switch>
-        <Route path="/edit">
-          <Edit />
-        </Route>
-        <Router path="/">
-          <Houses
-          houses={houses}
-          handleDeleteHouse={handleDeleteHouse}
-          />
-        </Router>
-      </Switch>
-    </Router>
+    <div className="app">
+      <Houses
+      houses={houses}
+      handleDeleteHouse={handleDeleteHouse}
+      />
+    </div>
   );
 }
 
