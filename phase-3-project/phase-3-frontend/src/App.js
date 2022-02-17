@@ -17,7 +17,7 @@ function App() {
 }
 
 const handleUpdateHouse = (updatedHouse) => {
-  const updatedHouses = houses.filter((house) => {
+  const updatedHouses = houses.map((house) => {
     if (house.id === updatedHouse.id) {
       return updatedHouse
     } else {
@@ -32,6 +32,7 @@ const handleUpdateHouse = (updatedHouse) => {
       <Houses
       houses={houses}
       handleDeleteHouse={handleDeleteHouse}
+      onUpdated={handleUpdateHouse}
       />
     </div>
   );
