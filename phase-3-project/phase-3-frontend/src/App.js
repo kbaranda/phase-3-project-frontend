@@ -1,6 +1,5 @@
 import Houses from "./components/Houses";
 import React, {useState, useEffect} from "react";
-import NewHouse from "./components/NewHouse";
 
 function App() {
   const [houses, setHouses] = useState([]);
@@ -28,7 +27,6 @@ const handleUpdateHouse = (updatedHouse) => {
 }
   return (
     <div className="app">
-      <NewHouse/>
       <Houses
       houses={houses}
       handleDeleteHouse={handleDeleteHouse}
