@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {FaTimesCircle, FaEdit} from "react-icons/fa";
 import Edit from './Edit';
+import "./HomeCard.css";
 
 const HomeCard = ({house, onHouseDelete, onUpdated}) => {
  const [isEditing, setIsEditing] = useState(false)
@@ -40,6 +41,8 @@ const HomeCard = ({house, onHouseDelete, onUpdated}) => {
       <div>
        <div className="heading">
         <h1>{house.address}</h1>
+       </div>
+       <div className="btns">
         <FaEdit onClick={() => setIsEditing((isEditing) => !isEditing)}/>
         <FaTimesCircle onClick={handleDeleteClick}/>
        </div>
@@ -48,7 +51,7 @@ const HomeCard = ({house, onHouseDelete, onUpdated}) => {
         <h4>{house.beds} Beds</h4>
         <h4>{house.baths} Baths</h4>
        </div>
-       <p>{house.description}</p>
+       <p className='description'>{house.description}</p>
       </div>
      )}
     </div>
