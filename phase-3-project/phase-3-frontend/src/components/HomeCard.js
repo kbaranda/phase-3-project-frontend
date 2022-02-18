@@ -40,7 +40,8 @@ const HomeCard = ({house, onHouseDelete, onUpdated}) => {
      ) : (
       <div>
        <div className="heading">
-        <h1>{house.address}</h1>
+        <h1 className='main-head'>{house.address}</h1>
+        <h2 className='tag-line'>{house.city}, {house.state} {house.areaCode}</h2>
        </div>
        <div className="btns">
         <FaEdit onClick={() => setIsEditing((isEditing) => !isEditing)}/>
