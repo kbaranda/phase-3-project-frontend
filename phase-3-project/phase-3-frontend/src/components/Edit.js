@@ -25,7 +25,7 @@ const Edit = ({id, address, city, state, areaCode, description, beds, baths, ima
     description: houseDescription,
     beds: houseBeds,
     baths: houseBaths,
-    imageUrl: imageUrl
+    imageUrl: houseImageUrl
    }),
   })
   .then(resp => resp.json())

@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import {FaPlusCircle,FaTimesCircle, FaEdit} from "react-icons/fa";
+import {FaTimesCircle, FaEdit} from "react-icons/fa";
 import Edit from './Edit';
-import NewHouse from './NewHouse';
-
 
 const HomeCard = ({house, onHouseDelete, onUpdated}) => {
  const [isEditing, setIsEditing] = useState(false)
- const [isAdded, setAdded] = useState(false)
 
  const{id, address, city, state,areaCode, description, beds, baths, imageUrl} = house
 
@@ -22,15 +19,8 @@ const HomeCard = ({house, onHouseDelete, onUpdated}) => {
   onUpdated(updatedHouse)
  }
 
-  return (
-    <div>      {isAdded ? (
-     <NewHouse />
-   ) : (
-     <div>
-       <h2>Want to Add a House? Click Me</h2>
-       <FaPlusCircle onClick={() => setAdded((isAdded) => !isAdded)}/>
-     </div>
-   )}
+ return (
+    <div>      
      {isEditing ? (
       <Edit 
       id={id}

@@ -25,12 +25,17 @@ const handleUpdateHouse = (updatedHouse) => {
   })
   setHouses(updatedHouses)
 }
+
+const handleAddHouse = (newHouse) => {
+  setHouses([...houses, newHouse])
+}
   return (
     <div className="app">
       <Houses
       houses={houses}
       handleDeleteHouse={handleDeleteHouse}
       onUpdated={handleUpdateHouse}
+      onAddedHouse={handleAddHouse}
       />
     </div>
   );
